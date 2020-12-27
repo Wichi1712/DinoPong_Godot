@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://sprites/spr_rocky_0.png" type="Texture" id=1]
+[ext_resource path="res://script/Player.gd" type="Script" id=2]
+[ext_resource path="res://script/Game.gd" type="Script" id=5]
+[ext_resource path="res://sprites/Terreno0.png" type="Texture" id=6]
+[ext_resource path="res://scenes/player/TestPlayer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/balls/ballDron.tscn" type="PackedScene" id=8]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 20.6786
+
+[node name="Game" type="Node"]
+script = ExtResource( 5 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 400.0
+margin_bottom = 400.0
+rect_scale = Vector2( 1.2, 1.8 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Player" type="Area2D" parent="." groups=[
+"Player",
+]]
+visible = false
+position = Vector2( 310.089, 577.423 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Player"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource( 1 )
+
+[node name="ContenDinos" type="Node2D" parent="."]
+
+[node name="HUD" type="Control" parent="."]
+anchor_right = 1.0
+margin_left = -0.735107
+margin_top = 24.258
+margin_right = -0.735107
+margin_bottom = 24.258
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD"]
+anchor_right = 1.0
+margin_left = 20.0
+margin_right = -20.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="HUD/MarginContainer"]
+margin_right = 440.0
+margin_bottom = 14.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Score"
+
+[node name="Life" type="Label" parent="HUD/MarginContainer"]
+margin_right = 440.0
+margin_bottom = 14.0
+text = "Life"
+align = 2
+
+[node name="Paredes" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Paredes"]
+polygon = PoolVector2Array( -0.513092, 718.869, -0.504799, -21.78, 480.752, -21.78, 480.334, 719.966, 404.654, 719.966, 404.236, 0.380264, 71.83, 0.380249, 76.9843, 719.685 )
+
+[node name="TestPlayer" parent="." instance=ExtResource( 7 )]
+position = Vector2( 237.09, 637.418 )
+
+[node name="ballDron" parent="." instance=ExtResource( 8 )]
+position = Vector2( 237.187, 332.266 )
