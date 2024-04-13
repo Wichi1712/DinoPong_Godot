@@ -15,7 +15,7 @@ func _physics_process(delta):
 	#Vuelve a la posicion inicial
 	if position.y > global_var.screenSize.y + 60:
 		randomize()
-		position.x = rand_range(-0,global_var.screenSize.x - 60)
+		position.x = rand_range(-70,global_var.screenSize.x - 70)
 		position.y = rand_range(-60,-560)
 
 

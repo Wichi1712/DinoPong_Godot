@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-
 var velocity = Vector2(250, 250)
 
 func _ready():
@@ -39,7 +38,8 @@ func moveBall(delta):
 			#que cambia a "stop" mientras el numero de balls sea mayor a cero de lo contrario sera
 			#eliminado al sobrepasar el alto de la pantalla.
 			if position.y > global_var.screenSize.y + 10:
-				get_parent().get_node("../Game").numBalls -=1
+				get_parent().get_node("../Game").numBalls -=1#Resta un ball
+				#De lo contrario regresa al estado "stop" junto a player
 				if get_parent().get_node("../Game").numBalls > 0:
 					global_var.stateBall = "stop"
 				else:

@@ -60,5 +60,5 @@ func crea_dinos():
 	for i in range(numeroDinos):
 		var tstDino = TestDino.instance()
 		randomize()
-		tstDino.position = Vector2(rand_range(-0,screenSize.x - 60),rand_range(-60,-560))
+		tstDino.position = Vector2(rand_range(75,screenSize.x - 75),rand_range(-60,-560))
 		$ContenDinos.add_child(tstDino)

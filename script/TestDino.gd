@@ -12,7 +12,7 @@ func _process(delta):
 	#Vuelve a la posicion inicial
 	if position.y > global_var.screenSize.y + 60:
 		randomize()
-		position.x = rand_range(-0,global_var.screenSize.x - 60)
+		position.x = rand_range(75,global_var.screenSize.x - 75)
 		position.y = rand_range(-60,-560)
 
 

@@ -23,9 +23,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Player" type="Area2D" parent="." groups=[
-"Player",
-]]
+[node name="Player" type="Area2D" parent="." groups=["Player"]]
 visible = false
 position = Vector2( 310.089, 577.423 )
 script = ExtResource( 2 )

@@ -61,7 +61,7 @@ func move(delta):
 		
 		
 	#LIMITES DE MOVIMIENTO
-	position.x = clamp(position.x,0,get_parent().screenSize.x)
+	position.x = clamp(position.x,90,get_parent().screenSize.x - 90)
 	position.y = clamp(position.y,0,get_parent().screenSize.y)
 
 
